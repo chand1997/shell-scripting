@@ -21,7 +21,7 @@ fi
 
 echo "Checking_for_already_installed"
 
-dnf list installed | grep -q "mysql-server"
+dnf list installed mysql-server | grep -q "mysql-server"
 
 VALIDATE Mysql_server_already_installed Mysql_server_not_installed
 
