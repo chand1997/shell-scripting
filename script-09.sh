@@ -10,6 +10,13 @@ exit 1
  #  we can write "exit n" to stop executing the further code(n--> any number other than 0)
 fi
 
+dnf list installed mysql-server
+if [ $? -eq 0 ]
+then
+echo "Already Installed"
+exit 1
+fi
+
 echo "Installing mysql-server"
 dnf install mysql-server -y
 
