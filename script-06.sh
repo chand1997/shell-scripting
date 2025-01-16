@@ -2,8 +2,8 @@
 
 #Special variables
 
-VARIBLE=Chandan
-echo "$VARIABLE"
+#how to run this script -> sh script-06.sh input1 input2 .... (input can be anything)
+
 echo "All inputs : $@"
 echo "number of variables : $#"
 echo "script name : $0" 
