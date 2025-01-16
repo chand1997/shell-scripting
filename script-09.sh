@@ -20,5 +20,5 @@ systemctl enable mysqld
 echo "Checking status of mysql server"
 systemctl status mysqld
 
-echo "Installation successfull"
+echo "Installation successful"
 
