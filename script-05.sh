@@ -5,4 +5,4 @@
 MOVIES=("kgf" "kantara" "tagaru")
 
 
-echo "First movie in array is : $MOVIES[0]"
+echo "First movie in array is : ${MOVIES[0]}"
