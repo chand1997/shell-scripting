@@ -2,7 +2,7 @@
 
 #Installing mysql
 
-if[ $(id -u) -ne 0 ]
+if [ $(id -u) -ne 0 ]
 then
 echo "should login as root user"
 exit 1
