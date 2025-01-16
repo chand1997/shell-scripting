@@ -10,6 +10,7 @@ exit 1
  #  we can write "exit n" to stop executing the further code(n--> any number other than 0)
 fi
 
+# Below code is checking whether mysql-server is already installed.
 dnf list installed mysql-server | grep -q "mysql-server"
 if [ $? -eq 0 ]
 then
