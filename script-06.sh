@@ -2,6 +2,8 @@
 
 #Special variables
 
+VARIBLE=Chandan
+
 echo "All inputs : $@"
 echo "number of variables : $#"
 echo "script name : $0" 
