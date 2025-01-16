@@ -27,23 +27,26 @@ fi
 
 dnf list installed | grep -q "mysql-server"
 
-VALIDATE "Mysql-server already installed"
+VALIDATE Mysql_server_already_installed
 
 dnf install mysql-server -y
 
-VALIDATE "Mysql-server failed to install" "Mysql-server successfully installed"
+VALIDATE Mysql_server_failed_to_install Mysql_server_successfully_installed
 
 systemctl start mysqld
 
-VALIDATE "Mysql-server failed to start" "Mysql-server successfully started"
+VALIDATE Mysql_server_failed_to_start Mysql_server_successfully_started
+
 
 systemctl enable mysqld
 
-VALIDATE "Mysql-server failed to enable" "Mysql-server successfully enabled"
+VALIDATE Mysql_server_failed_to_enable Mysql_server_successfully_enabled
+
 
 sytemctl status mysqld | grep -q "active (running)"
 
-VALIDATE "Mysql-server is not running" "Mysql-server successfully running"
+VALIDATE Mysql_server_not_active Mysql_server_successfully_running
+
 
 
 
