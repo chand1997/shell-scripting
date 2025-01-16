@@ -55,7 +55,7 @@ fi
 
 echo "Checking status of mysql server"
 systemctl status mysqld | grep -q "active (running)"
-# the above code checks for pattern in double quotes and if it finds it will retun exit 0.
+# the above code checks for pattern in double quotes and if it finds it will return exit 0.
 
 if [ $? -ne 0 ]
 then
