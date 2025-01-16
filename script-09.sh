@@ -10,7 +10,7 @@ exit 1
  #  we can write "exit n" to stop executing the further code(n--> any number other than 0)
 fi
 
-dnf list installed mysql-server
+dnf list installed mysql-server | grep -q "mysql-server"
 if [ $? -eq 0 ]
 then
 echo "Already Installed"
