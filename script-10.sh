@@ -3,14 +3,6 @@
 #Improvised way of writing script-09
 
 VALIDATE(){
-    if [ $2 -eq 0 ]
-    then
-    if [ $? -eq 0 ]
-    then
-    echo "$1"
-    exit 1
-    
-    else
     if [ $? -ne 0 ]
     then
     echo "$1"
@@ -19,14 +11,13 @@ VALIDATE(){
     echo "$2"
     fi
 }
-
-# VALIDATE1(){
-#     if [ $? -eq 0 ]
-#     then
-#     echo "$1"
-#     exit 1
-#     fi
-# }
+VALIDATE1(){
+    if [ $? -eq 0 ]
+    then
+    echo "$1"
+    exit 1
+    fi
+}
 
 
 if [ $(id -u) -ne 0 ]
@@ -39,7 +30,7 @@ echo "Checking_for_already_installed"
 
 dnf list installed mysql-server | grep -q "mysql-server"
 
-VALIDATE Mysql_server_already_installed
+VALIDATE1 Mysql_server_already_installed
 
 echo "Installing_mysql"
 
