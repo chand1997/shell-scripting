@@ -13,7 +13,7 @@ fi
 dnf list installed mysql-server | grep -q "mysql-server"
 if [ $? -eq 0 ]
 then
-echo "Already Installed"
+echo "Mysql-server is already Installed"
 exit 1
 fi
 
