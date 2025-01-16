@@ -9,7 +9,7 @@ VALIDATE(){
     then
     echo "$1"
     exit 1
-    fi
+    
     else
     if [ $? -ne 0 ]
     then
@@ -19,6 +19,7 @@ VALIDATE(){
     echo "$2"
     fi
 }
+
 # VALIDATE1(){
 #     if [ $? -eq 0 ]
 #     then
