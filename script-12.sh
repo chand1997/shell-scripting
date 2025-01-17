@@ -7,6 +7,7 @@ G="\e[32m"
 Y="\e[33m"
 N="\e[0m"
 
+#Firstly, create a directory/folder called shellscript_logs in /var/log directory.
 LOG_FOLDER="/var/log/shellscript_logs"
 LOG_FILE=$(echo $0 | cut -d "." -f1)
 TIME_STAMP=$(date +%Y-%m-%d-%H-%M-%S)
@@ -42,7 +43,7 @@ dnf install mysql-server -y &>>$LOGFILE_NAME
 
 VALIDATE $? Mysql_Installation
 
-echo "Starting mysql-server" &>>$LOGFILE_NAME 
+echo "Starting mysql-server" &>>$LOGFILE_NAME
 
 systemctl start mysqld &>>$LOGFILE_NAME
 
