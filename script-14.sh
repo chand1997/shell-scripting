@@ -31,7 +31,7 @@ fi
 for package in $PACKAGES
 do
 echo "Checking whether $package is already installed" &>>$LOGFILE_NAME
-dnf list installed $package
+dnf list installed $package &>>$LOGFILE_NAME
 if [ $? -ne 0 ]
 then
 echo "$package is installing" &>>$LOGFILE_NAME
