@@ -3,9 +3,9 @@
 #best way to write script-09
 
 #These are color codes in shell. Inorder to use them use "-e"-->enabling.Use respected color code in echo.
-R=/e[31m
-G=/e[32m
-Y=/e[33m
+R="\e[31m"
+G="\e[32m"
+Y="\e[33m"
 
 VALIDATE() {
     if [ $1 -ne 0 ]; then
