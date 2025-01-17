@@ -7,7 +7,6 @@ G="\e[32m"
 Y="\e[33m"
 N="\e[0m"
 
-
 LOG_FOLDER="/var/log/shellscript_logs"
 LOG_FILE=$(echo $0 | cut -d "." -f1)
 TIME_STAMP=$(date +%Y-%m-%d-%H-%M-%S)
@@ -28,16 +27,14 @@ if [ $(id -u) -ne 0 ]; then
     exit 1
 fi
 
-for package in $PACKAGES
-do
-echo "Checking whether $package is already installed" &>>$LOGFILE_NAME
-dnf list installed $package &>>$LOGFILE_NAME
-if [ $? -ne 0 ]
-then
-echo "$package is installing" &>>$LOGFILE_NAME
-dnf install $package -y &>>$LOGFILE_NAME
-VALIDATE $? "$package installation"
-else
-echo -e "$Y $package already installed $N"
-fi
+for package in $PACKAGES; do
+    echo "Checking whether $package is already installed" &>>$LOGFILE_NAME
+    dnf list installed $package &>>$LOGFILE_NAME
+    if [ $? -ne 0 ]; then
+        echo "$package is installing" &>>$LOGFILE_NAME
+        dnf install $package -y &>>$LOGFILE_NAME
+        VALIDATE $? "$package installation"
+    else
+        echo -e "$Y $package already installed $N"
+    fi
 done
