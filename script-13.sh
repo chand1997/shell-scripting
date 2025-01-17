@@ -4,7 +4,7 @@
 
 #Print 1-N
 echo "Printing 1-10"
-for i in $(seq 1 10); do
+for i in {1..10}; do
     echo $i
 done
 
