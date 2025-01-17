@@ -10,6 +10,8 @@ done
 
 echo "Enter Number : "
 read NUMBER
-for i in $(seq 1 $NUMBER); do
+echo "Printing 1-$NUMBER "
+
+for i in {1..$NUMBER}; do
     echo $i
 done
