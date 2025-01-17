@@ -2,28 +2,24 @@
 
 #Improvised way of writing script-09
 
-VALIDATE(){
-    if [ $? -ne 0 ]
-    then
-    echo "$1"
-    exit 1
+VALIDATE() {
+    if [ $? -ne 0 ]; then
+        echo "$1"
+        exit 1
     else
-    echo "$2"
+        echo "$2"
     fi
 }
-VALIDATE1(){
-    if [ $? -eq 0 ]
-    then
-    echo "$1"
+VALIDATE1() {
+    if [ $? -eq 0 ]; then
+        echo "$1"
+        exit 1
+    fi
+}
+
+if [ $(id -u) -ne 0 ]; then
+    echo "Only root user can install"
     exit 1
-    fi
-}
-
-
-if [ $(id -u) -ne 0 ]
-then
-echo "Only root user can install"
-exit 1
 fi
 
 echo "Checking_for_already_installed"
@@ -40,7 +36,6 @@ VALIDATE Mysql_server_failed_to_install Mysql_server_successfully_installed
 
 echo "Starting_mysql"
 
-
 systemctl start mysqld
 
 VALIDATE Mysql_server_failed_to_start Mysql_server_successfully_started
@@ -54,12 +49,3 @@ echo "Checking status of mysql"
 systemctl status mysqld | grep -q "active (running)"
 
 VALIDATE Mysql_server_not_active Mysql_server_successfully_running
-
-
-
-
-
-
-
-
-

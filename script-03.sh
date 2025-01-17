@@ -4,9 +4,9 @@
 
 echo "Enter username :"
 
-read -s USERNAME   # -s -> to hide whatever entered
+read -s USERNAME # -s -> to hide whatever entered
 
-echo "USERNAME ENTERED : $USERNAME"  # it is showing just because we printed it.
+echo "USERNAME ENTERED : $USERNAME" # it is showing just because we printed it.
 
 echo "Enter Password :"
 
