@@ -6,13 +6,17 @@
 R="\e[31m"
 G="\e[32m"
 Y="\e[33m"
+N="\e[0m" 
+
+# N is normal color i.e white. if we dont add normal color after using any other color, the following echo 
+# prints will be of previously used color.
 
 VALIDATE() {
     if [ $1 -ne 0 ]; then
-        echo -e "$2  $R FAILED"
+        echo -e "$2  $R FAILED $N "
         exit 1
     else
-        echo -e "$2 $G SUCCESS"
+        echo -e "$2 $G SUCCESS $N "
     fi
 
 }
@@ -27,7 +31,7 @@ echo "Checking whether mysql-server is already installed"
 dnf list installed mysql-server | grep -q "mysql-server"
 
 if [ $? -eq 0 ]; then
-    echo -e " $Y Mysql-server already INSTALLED"
+    echo -e " $Y Mysql-server already INSTALLED $N "
     exit 1
 fi
 
