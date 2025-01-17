@@ -38,6 +38,6 @@ echo "$package is installing" &>>$LOGFILE_NAME
 dnf install $package -y &>>$LOGFILE_NAME
 VALIDATE $? "$package installation"
 else
-echo "$package already installed"
+echo "$Y $package already installed $N"
 fi
 done
