@@ -52,6 +52,8 @@ VALIDATE $? Status_checking
 
 echo "Mysql-server successfully running"
 
+sleep 2
+
 echo "Deleting mysql-server"
 
 dnf remove mysql-server -y
