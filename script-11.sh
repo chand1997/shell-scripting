@@ -51,3 +51,9 @@ systemctl status mysqld | grep -q "active (running)"
 VALIDATE $? Status_checking
 
 echo "Mysql-server successfully running"
+
+echo "Deleting mysql-server"
+
+dnf remove mysql-server -y
+
+VALIDATE $? Removing_Mysql_server
