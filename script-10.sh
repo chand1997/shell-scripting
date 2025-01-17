@@ -41,11 +41,13 @@ systemctl start mysqld
 VALIDATE Mysql_server_failed_to_start Mysql_server_successfully_started
 
 echo "Enabling mysql"
+
 systemctl enable mysqld
 
 VALIDATE Mysql_server_failed_to_enable Mysql_server_successfully_enabled
 
 echo "Checking status of mysql"
+
 systemctl status mysqld | grep -q "active (running)"
 
 VALIDATE Mysql_server_not_active Mysql_server_successfully_running

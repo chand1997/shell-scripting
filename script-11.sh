@@ -2,12 +2,17 @@
 
 #best way to write script-09
 
+#These are color codes in shell. Inorder to use them use "-e"-->enabling.Use respected color code in echo.
+R=/e[31m
+G=/e[32m
+Y=/e[33m
+
 VALIDATE() {
     if [ $1 -ne 0 ]; then
-        echo "$2 failed"
+        echo -e "$2  $R FAILED"
         exit 1
     else
-        echo "$2 success"
+        echo -e "$2 $G SUCCESS"
     fi
 
 }
@@ -22,7 +27,7 @@ echo "Checking whether mysql-server is already installed"
 dnf list installed mysql-server | grep -q "mysql-server"
 
 if [ $? -eq 0 ]; then
-    echo "Mysql-server already installed"
+    echo -e " $Y Mysql-server already INSTALLED"
     exit 1
 fi
 
