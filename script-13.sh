@@ -6,6 +6,6 @@
 
 echo "Enter Number : "
 read NUMBER
-for i in {1..NUMBER}; do
+for i in {1..$NUMBER}; do
     $i
 done
