@@ -36,35 +36,35 @@ if [ $? -eq 0 ]; then
     exit 1
 fi
 
-echo "Mysql-server installing"
+echo "Mysql-server installing" &>>$LOGFILE_NAME
 
 dnf install mysql-server -y &>>$LOGFILE_NAME
 
 VALIDATE $? Mysql_Installation
 
-echo "Starting mysql-server"
+echo "Starting mysql-server" &>>$LOGFILE_NAME 
 
 systemctl start mysqld &>>$LOGFILE_NAME
 
 VALIDATE $? Starting_Mysql
 
-echo "Enabling Mysql-server"
+echo "Enabling Mysql-server" &>>$LOGFILE_NAME
 
 systemctl enable mysqld &>>$LOGFILE_NAME
 
 VALIDATE $? Enabling_Mysql
 
-echo "Checking status of mysql-server"
+echo "Checking status of mysql-server" &>>$LOGFILE_NAME
 
 systemctl status mysqld | grep -q "active (running)"
 
 VALIDATE $? Status_checking
 
-echo "Mysql-server successfully running"
+echo "Mysql-server successfully running" &>>$LOGFILE_NAME
 
 sleep 2
 
-echo "Deleting mysql-server"
+echo "Deleting mysql-server" &>>$LOGFILE_NAME
 
 dnf remove mysql-server -y &>>$LOGFILE_NAME
 
