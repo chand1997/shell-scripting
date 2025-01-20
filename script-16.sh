@@ -29,9 +29,9 @@ if [ ! -n "$FILES_TO_REMOVE" ]; then
     exit 1
 fi
 
-ZIP="/$DEST_DIRECTORY/$TIME_STAMP-logs.zip"
+ZIP="$DEST_DIRECTORY/$TIME_STAMP-logs.zip"
 
-find $SOURCE_DIRECTORY -name "*.log" -mtime +$DAYS | zip @ "$ZIP"
+find $SOURCE_DIRECTORY -name "*.log" -mtime +$DAYS | zip "$ZIP" -@
 
 if [ ! -f "$ZIP" ]; then
     echo "Zip file not created"
