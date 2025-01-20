@@ -4,7 +4,7 @@
 
 SOURCE_DIRECTORY=$1
 DEST_DIRECTORY=$2
-DAYS={$3 : -14}
+DAYS="${3:-14}"
 TIME_STAMP=$(date +%Y-%m-%d-%H-%M-%S)
 
 if [ $# -ne 2 ]; then
