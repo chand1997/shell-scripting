@@ -29,7 +29,7 @@ if [ ! -n "$FILES_TO_REMOVE" ]; then
     exit 1
 fi
 
-ZIP="/$DEST_DIRECTORY/$TIME_STAMP-logs"
+ZIP="$DEST_DIRECTORY/$TIME_STAMP-logs"
 
 find $SOURCE_DIRECTORY -name "*.log" -mtime +$DAYS | zip @ "$ZIP"
 
