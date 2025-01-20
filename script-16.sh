@@ -39,5 +39,7 @@ if [ ! -f "$ZIP" ]; then
 fi
 
 for file in $(find "$SOURCE_DIRECTORY" -name "*.log" -mtime +$DAYS); do
-    rm -rf file
+    rm -rf $file
 done
+
+echo "Done"
