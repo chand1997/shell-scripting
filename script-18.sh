@@ -17,4 +17,5 @@ while read -r file; do
     fi
 done <<<"$FILES"
 
-echo "$MSG"
+# inorder to make \n (next line) work, we use -e
+echo -e "$MSG"
