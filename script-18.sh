@@ -1,8 +1,10 @@
 #!/bin/bash
 
+# Monitoring disk storage.
 FILES=$(df -hT | grep xfs)
 DISK_THRESHOLD=5
 MSG=""
+EMAIL=$1
 
 while read -r file; do
 
@@ -19,3 +21,5 @@ done <<<"$FILES"
 
 # inorder to make \n (next line) work, we use -e
 echo -e "$MSG"
+
+echo -e "$MSG" | mutt -s "Disk-storage" $1
