@@ -24,6 +24,8 @@ fi
 
 FILES_TO_REMOVE=$(find $SOURCE_DIRECTORY -name "*.log" -mtime +$DAYS)
 
+# -n --> returns true if value is non-empty  and -z --> returns true if value is empty
+
 if [ ! -n "$FILES_TO_REMOVE" ]; then
     echo "Files older than $DAYS does not exist"
     exit 1
@@ -37,6 +39,8 @@ if [ ! -f "$ZIP" ]; then
     echo "Zip file not created"
     exit 1
 fi
+
+echo "Deleting files from source directory"
 
 for file in $(find "$SOURCE_DIRECTORY" -name "*.log" -mtime +$DAYS); do
     rm -rf $file
